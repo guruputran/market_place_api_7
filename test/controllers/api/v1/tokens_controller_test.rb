@@ -4,10 +4,7 @@ class Api::V1::TokensControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:two)
   end
-  # test "should get create" do
-  #   get api_v1_tokens_create_url
-  #   assert_response :success
-  # end
+
   test "should get JWT token" do
     post api_v1_tokens_url, params: { user: { email: @user.email, password: "g00d_pa$$" } }, as: :json
     assert_response :success
